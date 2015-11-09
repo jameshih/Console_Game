@@ -35,7 +35,7 @@ void interFace() {
       text("Score: " + v, 520, 560);
       drawCharacter(x, y);
       setGoal(goalX, goalY);
-      if (goalX-20 <= x+10 && goalY == y-10 || goalX == x-10 && goalY == y-10  ) {
+      if (x - goalX <=5 && y-goalY <=5) {
         v+=1;
         goalX = (int)random(40, 560);
         goalY = (int)random(40, 480);
@@ -44,7 +44,7 @@ void interFace() {
         drawEnemy(enemyX[i], enemyY[i]);
         enemyY[i] += enemySpeed;
         //hit
-        if (enemyX[i] == x && enemyY[i] == y)caseState = 2;
+        if (enemyX[i] - x == 3 && enemyY[i] == y-10)caseState = 2;
         if (enemyY[i] >= base - 50) {
           resetEnemy();
         }
